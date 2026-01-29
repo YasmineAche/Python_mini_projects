@@ -14,7 +14,6 @@ Multiple turtles race across the screen with random movement until one reaches t
 - [🛠 Requirements](#🛠-requirements)
 - [▶️ How to Run](#▶️-how-to-run)
 - [📦 Build Executable (Optional)](<#📦-build-executable-(optional)>)
-- [📁 Project Structure](#📁-project-structure)
 - [📝 License](#📝-license)
 
 ## 🎮 Features
@@ -59,16 +58,6 @@ pyinstaller --onefile --windowed --name "Turtle Race" --icon="turtle_icon.png" m
 
 ---
 
-## 📁 Project Structure
-
-turtle_race/
-│
-├── main.py
-├── turtle_icon.png
-└── README.md
-
----
-
 ## 📝 License
 
-This repository is licensed under the [MIT License](LICENSE).
+This repository is licensed under the [MIT License](LICENSE.md).
