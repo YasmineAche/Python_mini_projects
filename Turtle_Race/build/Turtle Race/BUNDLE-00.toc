@@ -1,0 +1,4 @@
+([('Turtle Race',
+   '/Users/user/Documents/Formation en ligne/python copy/100 days of '
+   'code/day19-turtle-race/dist/Turtle Race',
+   'EXECUTABLE')],)

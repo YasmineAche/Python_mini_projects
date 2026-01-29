@@ -1,0 +1,1 @@
+pyinstaller --onefile --windowed --name "Turtle Race" --icon="turtle_icon.png" main.py
