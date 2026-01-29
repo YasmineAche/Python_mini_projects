@@ -60,4 +60,4 @@ pyinstaller --onefile --windowed --name "Turtle Race" --icon="turtle_icon.png" m
 
 ## 📝 License
 
-This repository is licensed under the [MIT License](LICENSE.md).
+This repository is licensed under the [MIT License](LICENSE).
