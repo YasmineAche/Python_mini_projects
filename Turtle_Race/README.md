@@ -5,6 +5,9 @@ Multiple turtles race across the screen with random movement until one reaches t
 
 ![Turtle Icon](turtle_icon.png)
 
+![Python Version](https://img.shields.io/badge/Python-3.6+-blue.svg)
+![License](https://img.shields.io/badge/License-MIT-green.svg)
+
 ---
 
 ## 📌 Table of Contents
