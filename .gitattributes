@@ -1,4 +1,0 @@
-# .gitattributes
-*.py linguist-language=Python
-*.md linguist-language=Markdown
-*.txt linguist-language=Text
