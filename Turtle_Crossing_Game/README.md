@@ -50,7 +50,7 @@ cd turtle-crossing-game
 
 ### Requirements
 
-- **Python 3.x**
+- Python 3.x
 - No additional dependencies required (uses built-in Turtle module)
 
 ### Run the game
