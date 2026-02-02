@@ -14,8 +14,8 @@ Help the turtle safely cross the busy road while avoiding moving cars!
 - [Installation](#-installation)
 - [How to Play](#-how-to-play)
 - [Game Mechanics](#-game-mechanics)
-- [Project Structure](#📁-project-structure)
-- [License](#📝-license)
+- [Project Structure](#-project-structure)
+- [License](#-license)
 
 ---
 
