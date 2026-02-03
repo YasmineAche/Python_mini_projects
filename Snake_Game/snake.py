@@ -17,19 +17,19 @@ class Snake:
         self.create_snake_body()
         self.snake_head = self.snake_body_parts_list[0]
 
-    def create_color(self):
+    def create_color(self) -> tuple:
         if self.snake_color_R > 180 or self.snake_color_G >= 255:
             self.snake_color_R, self.snake_color_G = 0, 120
         else:
             self.snake_color_R, self.snake_color_G = self.snake_color_R + 20, self.snake_color_G + 15
         return self.snake_color_R, self.snake_color_G
 
-    def create_snake_body(self):
+    def create_snake_body(self) -> None:
         for position in START_POSITIONS:
             snake_body_part = self.create_body_part(position)
             self.snake_body_parts_list.append(snake_body_part)
 
-    def create_body_part(self, position):
+    def create_body_part(self, position) -> Turtle:
         snake_body = Turtle("circle")
         snake_body.shapesize(stretch_wid=1.5, stretch_len=1.5)
         r, g = self.create_color()
@@ -38,12 +38,15 @@ class Snake:
         snake_body.goto(position)
         return snake_body
 
-    def extend_body(self):
-        tail_position = self.snake_body_parts_list[-1].position()
-        tail = self.create_body_part(tail_position)
-        self.snake_body_parts_list.append(tail)
+    def extend_body(self, score) -> None:
+        if len(self.snake_body_parts_list)-3 < score:
+            tail_position = self.snake_body_parts_list[-1].position()
+            tail = self.create_body_part(tail_position)
+            self.snake_body_parts_list.append(tail)
+        else:
+            self.snake_body_parts_list[score+2].showturtle()
 
-    def move(self):
+    def move(self) -> None:
         for snake_body_part_index in range(len(self.snake_body_parts_list) - 1, 0, -1):
             next_position = self.snake_body_parts_list[snake_body_part_index - 1].position()
             self.snake_body_parts_list[snake_body_part_index].goto(next_position)
@@ -69,13 +72,13 @@ class Snake:
             return
         self.snake_head.setheading(DOWN)
 
-    def reset_snake(self):
+    def reset_snake(self) -> None:
         i = 0
         [snake_body_part.hideturtle() for snake_body_part in self.snake_body_parts_list]
-        for snake_body_part in self.snake_body_parts_list:
-            snake_body_part.goto(START_POSITIONS[i])
+        for position in START_POSITIONS:
+            self.snake_body_parts_list[i].goto(position)
+            self.snake_body_parts_list[i].showturtle()
             i += 1
-        [snake_body_part.showturtle() for snake_body_part in self.snake_body_parts_list]
         self.snake_head.setheading(RIGHT)
 
     def position(self) -> tuple:

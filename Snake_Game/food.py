@@ -11,7 +11,7 @@ class Food(Turtle):
         self.speed("fastest")
         self.move_food()
 
-    def move_food(self):
+    def move_food(self) -> None:
         self.hideturtle()
         x_pos = randint(-260, 260)
         y_pos = randint(-260, 260)
