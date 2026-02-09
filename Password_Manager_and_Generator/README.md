@@ -25,11 +25,14 @@ User-friendly password management application built with Python and Tkinter, fol
 - **Form Validation:** Ensures all fields are completed before saving
 - **Confirmation Dialogs:** Double-check before saving sensitive data
 - **Responsive Controls:** Well-aligned input fields and buttons
+- **Clipboard Feedback:** Visual confirmation when passwords are copied
 
 ---
 ## 📋 Prerequisites
 - **Python 3.7** or higher
-- **Tkinter** (usually included with Python installation)
+- **Required Python packages:**
+  - Tkinter (usually included with Python installation)
+  - pyperclip (for clipboard functionality)
 
 ---
 ## 🚀 Installation & Usage
@@ -40,7 +43,11 @@ User-friendly password management application built with Python and Tkinter, fol
    - view.py - User interface components 
    - controller.py - Application logic 
    - logo.png - Application logo (optional)
-3. Run the application:
+3. Install Dependencie:
+```bash
+pip install pyperclip
+```
+4. Run the application:
 ```
 python main.py
 ```
@@ -57,6 +64,7 @@ The application follows the MVC pattern for clean separation of concerns:
 - Creates and manages the graphical user interface
 - Handles user input and display
 - Manages dialog boxes and message displays
+- Integrates with pyperclip for clipboard operations
 
 ### Controller (controller.py)
 - Coordinates between Model and View
@@ -77,6 +85,7 @@ The application follows the MVC pattern for clean separation of concerns:
 - Option B: Click "Generate Password" to create a secure password
   - A dialog will ask for desired password length 
   - Default is 8 characters, customizable
+  - Generated password is automatically copied to clipboard
 
 ### 4. Save Credentials
 - Click "Add" to save the entry
