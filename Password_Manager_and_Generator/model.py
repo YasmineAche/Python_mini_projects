@@ -24,12 +24,27 @@ class Model:
                 "password": password
             }
         }
+        try:
+            with open(DATA_FILE_PATH, "r") as file:
+                data = json.load(file)
+        except FileNotFoundError:
+            with open(DATA_FILE_PATH, "w") as file:
+                json.dump(new_data, file, indent=4)
+        else:
+            data.update(new_data)
+            with open(DATA_FILE_PATH, "w") as file:
+                json.dump(obj=data, fp=file, indent=4)
+
+    @staticmethod
+    def search_for_data(website: str) -> dict:
+        found_data = {}
         with open(DATA_FILE_PATH, "r") as file:
             data = json.load(file)
-            data.update(new_data)
-
-        with open(DATA_FILE_PATH, "w") as file:
-            json.dump(obj=data, fp=file, indent=4)
+            if website in data.keys():
+                found_data = data[website]
+            else:
+                found_data = {}
+        return found_data
 
     def generate_password(self, number_of_characters: int) -> str:
         password = "".join(choice(self.characters) for _ in range(number_of_characters))
