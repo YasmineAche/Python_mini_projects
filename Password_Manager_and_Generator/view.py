@@ -2,6 +2,7 @@ from tkinter import *
 from tkinter import messagebox
 from tkinter import simpledialog
 from typing import Literal
+import pyperclip
 
 FONT = ("Arial", 14, "bold")
 PINK = "#F9DFDF"
@@ -102,11 +103,13 @@ class View:
         self.window.focus_force()
 
     @staticmethod
-    def show_messagebox(message:str, type_of_messagebox:Literal["confirmation", "error"]) -> bool | None:
+    def show_messagebox(message:str, type_of_messagebox:Literal["confirmation", "error", "information"]) -> bool | None:
         if type_of_messagebox == "confirmation":
             return messagebox.askyesno(title="Confirmation", message="Are you sure you want to save this data?", detail=message, icon="question")
         elif type_of_messagebox == "error":
             messagebox.showerror(title="Error", message=message, icon="error")
+        elif type_of_messagebox == "information":
+            messagebox.showinfo(title="Information", message=message, icon="info")
         return None
 
     @staticmethod
@@ -119,6 +122,11 @@ class View:
     def set_password(self, password:str) -> None:
         self.password_input.delete(first=0, last=END)
         self.password_input.insert(0, password)
+        self.password_input.update_idletasks() # force the GUI to show password before messagebox
+        pyperclip.copy(password)
+        self.show_messagebox(type_of_messagebox="information", message="Password successfully generated and copied to clipboard!")
+        self.focus_window()
+        self.focus_cursor()
 
     def loop(self) -> None:
         self.window.mainloop()

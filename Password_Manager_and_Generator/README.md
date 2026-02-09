@@ -12,11 +12,13 @@ User-friendly password management application built with Python and Tkinter, fol
 - **Customizable Length:** Generate passwords with user-specified character count
 - **Strong Security:** Includes uppercase, lowercase, digits, and special characters
 - **Instant Generation:** Quick generation with customizable parameters
+- **Clipboard Integration:** Automatic copying of generated passwords
 
 ### 💾 Credential Management
 - **Secure Storage:** Save website, email/username, and password combinations
 - **Organized Format:** Data stored in readable, columnar text format
 - **Easy Retrieval:** Simple text-based storage for easy access
+- **Clipboard Support:** Copy passwords directly to clipboard after generation
 
 ### 🎨 User Interface
 - **Modern Design:** Clean, pink-themed interface with intuitive layout
