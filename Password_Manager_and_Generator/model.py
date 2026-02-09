@@ -37,9 +37,12 @@ class Model:
 
     @staticmethod
     def search_for_data(website: str) -> dict:
-        found_data = {}
-        with open(DATA_FILE_PATH, "r") as file:
-            data = json.load(file)
+        try:
+            with open(DATA_FILE_PATH, "r") as file:
+                data = json.load(file)
+        except FileNotFoundError:
+            found_data = {}
+        else:
             if website in data.keys():
                 found_data = data[website]
             else:
