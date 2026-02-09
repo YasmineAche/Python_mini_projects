@@ -65,7 +65,7 @@ class View:
 
         # Entries
         self.website_input.config(background="white", highlightthickness=0, width=20, foreground="black")
-        self.website_input.grid(column=1, row=1, columnspan=1, pady=2)
+        self.website_input.grid(column=1, row=1, pady=2)
         self.focus_cursor()
 
         self.email_username_input.config(background="white", highlightthickness=0, width=36, foreground="black")
