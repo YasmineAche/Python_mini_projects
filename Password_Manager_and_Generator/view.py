@@ -24,6 +24,7 @@ class View:
         self.password_input = Entry()
         self.generate_password_button = Button()
         self.add_button = Button()
+        self.search_button = Button()
         self.configure_widgets()
 
         self.center_window()
@@ -63,8 +64,8 @@ class View:
         self.password_label.grid(column=0, row=3, pady=2)
 
         # Entries
-        self.website_input.config(background="white", highlightthickness=0, width=36, foreground="black")
-        self.website_input.grid(column=1, row=1, columnspan=2, pady=2)
+        self.website_input.config(background="white", highlightthickness=0, width=20, foreground="black")
+        self.website_input.grid(column=1, row=1, columnspan=1, pady=2)
         self.focus_cursor()
 
         self.email_username_input.config(background="white", highlightthickness=0, width=36, foreground="black")
@@ -80,6 +81,9 @@ class View:
 
         self.add_button.config(text="Add", font=FONT, width=38, highlightthickness=0, highlightbackground=PINK)
         self.add_button.grid(column=1, row=4, columnspan=2, pady=2)
+
+        self.search_button.config(text="Search", font=FONT, width=14, highlightthickness=0, highlightbackground=PINK)
+        self.search_button.grid(column=2, row=1, pady=2)
 
     def get_user_input(self) -> tuple[str, str, str]:
         website = self.website_input.get()
@@ -116,7 +120,7 @@ class View:
     def get_number_of_characters() -> int:
         return simpledialog.askinteger(title="Password", prompt="Enter the number of characters you wish your password to have: ", minvalue=0, initialvalue=8)
 
-    def generate_password_click(self, command) -> None:
+    def generate_password_clicked(self, command) -> None:
         self.generate_password_button.config(command=command)
 
     def set_password(self, password:str) -> None:
@@ -127,6 +131,17 @@ class View:
         self.show_messagebox(type_of_messagebox="information", message="Password successfully generated and copied to clipboard!")
         self.focus_window()
         self.focus_cursor()
+
+    def get_researched_website_name(self) -> str:
+        return self.website_input.get()
+
+    def search_data_clicked(self, command) -> None:
+        self.search_button.config(command=command)
+
+    def display_found_data(self, data:dict) -> None:
+        self.email_username_input.delete(first=0, last=END)
+        self.email_username_input.insert(0, data["email/username"])
+        self.password_input.insert(0, data["password"])
 
     def loop(self) -> None:
         self.window.mainloop()
