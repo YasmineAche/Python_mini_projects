@@ -1,8 +1,10 @@
 # 🔐 Password Manager & Generator
-[Image of a lock](logo.png)
+![Image of a lock](logo.png)
 
 User-friendly password management application built with Python and Tkinter, following the MVC (Model-View-Controller) architectural pattern. The application helps users generate strong passwords and securely store their credentials.
 
+![Python Version](https://img.shields.io/badge/Python-3.6+-blue.svg)
+![License](https://img.shields.io/badge/License-MIT-green.svg)
 ---
 
 ## ✨ Features
